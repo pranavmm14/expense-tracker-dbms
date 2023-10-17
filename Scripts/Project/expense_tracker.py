@@ -1,15 +1,23 @@
 import mysql.connector
 import json
 
-with open('config.json','r') as c:
+with open('Scripts\Project\myconfig.json','r') as c:
     params= json.load(c)['params']
 
 print("Import success!")
 
 mydb = mysql.connector.connect(
   host="localhost",
-  user="root",
-  password="spmm"
+  user=params['username'],
+  password=params['password'],
+  database= params['database']
 )
 
-print(mydb)
+mycursor = mydb.cursor()
+
+mycursor.execute("SELECT * FROM ")
+
+myresult = mycursor.fetchall()
+
+for x in myresult:
+  print(x)
