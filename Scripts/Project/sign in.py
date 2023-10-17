@@ -1,9 +1,13 @@
 from tkinter import *
 
 
-ws = Tk()
-ws.title('PythonGuides')
-ws.config(bg='#0B5A81')
+window = Tk()
+window.title('Expense Tracker')
+window.config(bg='#0B5A81')
+window.resizable(False,False)
+window.geometry("1200x700+100+50")
+
+
 
 f = ('Times', 14)
 var = StringVar()
@@ -11,7 +15,7 @@ var.set('male')
 
 
 right_frame = Frame(
-    ws, 
+    window, 
     bd=2, 
     bg='#CCCCCC',
     relief=SOLID, 
@@ -144,7 +148,7 @@ register_mobile.grid(row=2, column=1, pady=10, padx=20)
 register_pwd.grid(row=5, column=1, pady=10, padx=20)
 pwd_again.grid(row=6, column=1, pady=10, padx=20)
 register_btn.grid(row=7, column=1, pady=10, padx=20)
-right_frame.pack()
+right_frame.place(x=700,y=50,anchor="nw")
 
 gender_frame.grid(row=3, column=1, pady=10, padx=20)
 male_rb.pack(expand=True, side=LEFT)
@@ -152,20 +156,12 @@ female_rb.pack(expand=True, side=LEFT)
 others_rb.pack(expand=True, side=LEFT)
 
 
-ws.mainloop()
-
-ws = Tk()
-ws.title('PythonGuides')
-ws.config(bg='#0B5A81')
-
-f = ('Times', 14)
-
 left_frame = Frame(
-    ws, 
+    window, 
     bd=2, 
     bg='#CCCCCC',   
     relief=SOLID, 
-    padx=10, 
+    padx=10,
     pady=10
     )
 
@@ -204,7 +200,7 @@ login_btn = Button(
 email_tf.grid(row=0, column=1, pady=10, padx=20)
 pwd_tf.grid(row=1, column=1, pady=10, padx=20)
 login_btn.grid(row=2, column=1, pady=10, padx=20)
-left_frame.pack()
+left_frame.place(x=100,y=50,anchor="nw")
 
 
-ws.mainloop()
+window.mainloop()
