@@ -1,4 +1,8 @@
 {
-    "username":"root",
-    "password":""
+    "params": {
+        "username": "",
+        "password": "",
+        "database":"",
+        "host": ""
+    }
 }
