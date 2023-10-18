@@ -9,10 +9,8 @@ window.title('Expense Tracker')
 window.config(bg='#0B5A81')
 window.resizable(False,False)
 window.geometry("1200x700+100+50")
-window.wm_attributes('-transparentcolor', '#45b5a4')
 
-canvas = Canvas(window)
-canvas.pack()
+
 
 f = ('Times', 14)
 var = StringVar()
@@ -27,66 +25,87 @@ label.pack()
 
 
 right_frame = Frame(
-    canvas, 
+    window, 
     bd=2, 
-    bg='#45b5a4',
+    bg='#ffffff',
     relief=SOLID, 
     padx=10, 
-    pady=10 
+    pady=10
     )
 
 
 Label(
     right_frame, 
-    text="Enter Name", 
-    bg='#CCCCCC',
-    font=f
+    text="first Name", 
+    bg='#fff',
+    font=f,
+    foreground='#d19c21'
     ).grid(row=0, column=0, sticky=W, pady=10)
 
 Label(
     right_frame, 
-    text="Enter Email", 
-    bg='#CCCCCC',
-    font=f
+    text="last Name", 
+    bg='#fff',
+    font=f,
+    foreground='#d19c21'
     ).grid(row=1, column=0, sticky=W, pady=10)
+
 
 Label(
     right_frame, 
-    text="Contact Number", 
-    bg='#CCCCCC',
-    font=f
+    text="Enter Email", 
+    bg='#fff',
+    font=f,
+    foreground='#d19c21'
     ).grid(row=2, column=0, sticky=W, pady=10)
 
 Label(
     right_frame, 
-    text="Select Gender", 
-    bg='#CCCCCC',
-    font=f
+    text="Contact Number", 
+    bg='#fff',
+    font=f,
+    foreground='#d19c21'
+    
     ).grid(row=3, column=0, sticky=W, pady=10)
 
 Label(
     right_frame, 
+    text="Select Gender", 
+    bg='#fff',
+    font=f,
+    foreground='#d19c21'
+    ).grid(row=4, column=0, sticky=W, pady=10)
+
+Label(
+    right_frame, 
     text="Enter Password", 
-    bg='#CCCCCC',
-    font=f
+    bg='#fff',
+    font=f,
+    foreground='#d19c21'
     ).grid(row=5, column=0, sticky=W, pady=10)
 
 Label(
     right_frame, 
     text="Re-Enter Password", 
-    bg='#CCCCCC',
-    font=f
+    bg='#fff',
+    font=f,
+    foreground='#d19c21'
     ).grid(row=6, column=0, sticky=W, pady=10)
 
 gender_frame = LabelFrame(
     right_frame,
-    bg='#CCCCCC',
+    bg='#fff',
     padx=10, 
     pady=10,
     )
 
 
-register_name = Entry(
+register_firstname = Entry(
+    right_frame, 
+    font=f
+    )
+
+register_lastname = Entry(
     right_frame, 
     font=f
     )
@@ -108,6 +127,7 @@ male_rb = Radiobutton(
     bg='#CCCCCC',
     variable=var,
     value='male',
+    foreground='#d19c21',
     font=('Times', 10),
     
 )
@@ -118,6 +138,7 @@ female_rb = Radiobutton(
     bg='#CCCCCC',
     variable=var,
     value='female',
+    foreground='#d19c21',
     font=('Times', 10),
   
 )
@@ -128,6 +149,7 @@ others_rb = Radiobutton(
     bg='#CCCCCC',
     variable=var,
     value='others',
+    foreground='#d19c21',
     font=('Times', 10)
    
 )
@@ -154,24 +176,25 @@ register_btn = Button(
 )
 
 
-register_name.grid(row=0, column=1, pady=10, padx=20)
-register_email.grid(row=1, column=1, pady=10, padx=20) 
-register_mobile.grid(row=2, column=1, pady=10, padx=20)
+register_firstname.grid(row=0, column=1, pady=10, padx=20)
+register_lastname.grid(row=1, column=1, pady=10, padx=20)
+register_email.grid(row=2, column=1, pady=10, padx=20) 
+register_mobile.grid(row=3, column=1, pady=10, padx=20)
+gender_frame.grid(row=4, column=1, pady=10, padx=20)
 register_pwd.grid(row=5, column=1, pady=10, padx=20)
-pwd_again.grid(row=6, column=1, pady=10, padx=20)
+pwd_again.grid(row=6 , column=1, pady=10, padx=20)
 register_btn.grid(row=7, column=1, pady=10, padx=20)
 right_frame.place(x=700,y=50,anchor="nw")
 
-gender_frame.grid(row=3, column=1, pady=10, padx=20)
 male_rb.pack(expand=True, side=LEFT)
 female_rb.pack(expand=True, side=LEFT)
 others_rb.pack(expand=True, side=LEFT)
 
 
 left_frame = Frame(
-    canvas, 
+    window, 
     bd=2, 
-    bg='#45b5a4',   
+    bg='#b1a5cc',   
     relief=SOLID, 
     padx=10,
     pady=10
@@ -180,14 +203,17 @@ left_frame = Frame(
 Label(
     left_frame, 
     text="Enter Email", 
-    bg='#CCCCCC',
-    font=f).grid(row=0, column=0, sticky=W, pady=10)
+    bg='#b1a5cc',
+    font=f,
+    foreground='#250073'
+    ).grid(row=0, column=0, sticky=W, pady=10)
 
 Label(
     left_frame, 
     text="Enter Password", 
-    bg='#CCCCCC',
-    font=f
+    bg='#b1a5cc',
+    font=f,
+    foreground='#250073'
     ).grid(row=1, column=0, pady=10)
 
 email_tf = Entry(
@@ -214,6 +240,5 @@ pwd_tf.grid(row=1, column=1, pady=10, padx=20)
 login_btn.grid(row=2, column=1, pady=10, padx=20)
 left_frame.place(x=100,y=50,anchor="nw")
 
-# canvas.config(alpha=0.5)
 
 window.mainloop()

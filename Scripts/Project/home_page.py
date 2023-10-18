@@ -7,14 +7,17 @@ window.title('Expense Tracker')
 window.config(bg='#0B5A81')
 window.resizable(False,False)
 window.geometry("1200x700+100+50")
+background_image = PhotoImage(file="Scripts\\Project\\1.png")
+label6 = Label(window, image = background_image)
+label6.pack()
+
 
 f = ('Times', 14)
 var = StringVar()
 var.set('male')
 
-# # Create a top frame on the right
-# top_frame_right = Frame(window, width=300, height=600, bg="blue")
-# top_frame_right.grid(row=3, column=20, padx=1, pady=1)
+
+
 
 # Create a bottom frame below the top frames
 bottom_frame = Frame(window, width=900, height=100, bg="green")
@@ -80,7 +83,7 @@ pady=10
     
 Label(
     left_frame, 
-    text=" ", 
+    text="", 
     bg='#CCCCCC',
     font=f
     ).grid(row=1, column=0, sticky=W, pady=10)
@@ -94,6 +97,16 @@ register_blanck.grid(row=1, column=1, pady=10, padx=20)
 
 
 label3 = Label(bottom_frame, text="Frame 3 (Green)")
-label3.place(x=700,y=50,anchor="sw")
+label3.place(x=700, y=50, anchor="sw")
+
+# Create two Label widgets
+label4 = Label(label3, text="Column 1")
+label5 = Label(label3, text="Column 2")
+
+# Place the Label widgets in the label3 frame
+label4.grid(row=0, column=0)
+label5.grid(row=0, column=1)
+
+
 
 window.mainloop()
