@@ -7,9 +7,9 @@ window.title('Expense Tracker')
 window.config(bg='#0B5A81')
 window.resizable(False,False)
 window.geometry("1200x700+100+50")
-background_image = PhotoImage(file="Scripts\\Project\\1.png")
-label6 = Label(window, image = background_image)
-label6.pack()
+# background_image = PhotoImage(file="Scripts\\Project\\1.png")
+# label6 = Label(window, image = background_image)
+# label6.pack()
 
 
 f = ('Times', 14)

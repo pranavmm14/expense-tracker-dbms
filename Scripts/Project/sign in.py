@@ -6,7 +6,7 @@ from tkinter import *
 
 window = Tk()
 window.title('Expense Tracker')
-window.config(bg='#0B5A81')
+window.config(bg='#c5bfc7')
 window.resizable(False,False)
 window.geometry("1200x700+100+50")
 
@@ -36,18 +36,18 @@ right_frame = Frame(
 
 Label(
     right_frame, 
-    text="first Name", 
+    text="First Name", 
     bg='#fff',
     font=f,
-    foreground='#d19c21'
+    foreground='#063808'
     ).grid(row=0, column=0, sticky=W, pady=10)
 
 Label(
     right_frame, 
-    text="last Name", 
+    text="Last Name", 
     bg='#fff',
     font=f,
-    foreground='#d19c21'
+    foreground='#063808'
     ).grid(row=1, column=0, sticky=W, pady=10)
 
 
@@ -56,7 +56,7 @@ Label(
     text="Enter Email", 
     bg='#fff',
     font=f,
-    foreground='#d19c21'
+    foreground='#063808'
     ).grid(row=2, column=0, sticky=W, pady=10)
 
 Label(
@@ -64,7 +64,7 @@ Label(
     text="Contact Number", 
     bg='#fff',
     font=f,
-    foreground='#d19c21'
+    foreground='#063808'
     
     ).grid(row=3, column=0, sticky=W, pady=10)
 
@@ -73,7 +73,7 @@ Label(
     text="Select Gender", 
     bg='#fff',
     font=f,
-    foreground='#d19c21'
+    foreground='#063808'
     ).grid(row=4, column=0, sticky=W, pady=10)
 
 Label(
@@ -81,7 +81,7 @@ Label(
     text="Enter Password", 
     bg='#fff',
     font=f,
-    foreground='#d19c21'
+    foreground='#063808'
     ).grid(row=5, column=0, sticky=W, pady=10)
 
 Label(
@@ -89,35 +89,45 @@ Label(
     text="Re-Enter Password", 
     bg='#fff',
     font=f,
-    foreground='#d19c21'
+    foreground='#063808'
     ).grid(row=6, column=0, sticky=W, pady=10)
 
 gender_frame = LabelFrame(
     right_frame,
     bg='#fff',
+    bd=2, 
     padx=10, 
     pady=10,
+    foreground='#063808',
     )
 
 
 register_firstname = Entry(
     right_frame, 
-    font=f
+    font=f,
+    bd=5, 
+    foreground='#063808',
     )
 
 register_lastname = Entry(
     right_frame, 
-    font=f
+    font=f,
+    bd=5, 
+    foreground='#063808',
     )
 
 register_email = Entry(
     right_frame, 
-    font=f
+    font=f,
+    bd=5, 
+    foreground='#063808',
     )
 
 register_mobile = Entry(
     right_frame, 
-    font=f
+    font=f,
+    bd=5, 
+    foreground='#063808',
     )
 
 
@@ -127,7 +137,7 @@ male_rb = Radiobutton(
     bg='#CCCCCC',
     variable=var,
     value='male',
-    foreground='#d19c21',
+    foreground='#063808',
     font=('Times', 10),
     
 )
@@ -138,7 +148,7 @@ female_rb = Radiobutton(
     bg='#CCCCCC',
     variable=var,
     value='female',
-    foreground='#d19c21',
+    foreground='#063808',
     font=('Times', 10),
   
 )
@@ -149,7 +159,7 @@ others_rb = Radiobutton(
     bg='#CCCCCC',
     variable=var,
     value='others',
-    foreground='#d19c21',
+    foreground='#063808',
     font=('Times', 10)
    
 )
@@ -157,11 +167,15 @@ others_rb = Radiobutton(
 register_pwd = Entry(
     right_frame, 
     font=f,
+    bd=5, 
+    foreground='#063808',
     show='*'
 )
 pwd_again = Entry(
     right_frame, 
     font=f,
+    bd=5, 
+    foreground='#063808',
     show='*'
 )
 
@@ -170,6 +184,7 @@ register_btn = Button(
     width=15, 
     text='Register', 
     font=f, 
+    background='#fff',
     relief=SOLID,
     cursor='hand2',
     command=None
@@ -202,7 +217,7 @@ left_frame = Frame(
 
 Label(
     left_frame, 
-    text="Enter Email", 
+    text="UserName", 
     bg='#b1a5cc',
     font=f,
     foreground='#250073'
@@ -210,7 +225,7 @@ Label(
 
 Label(
     left_frame, 
-    text="Enter Password", 
+    text="Password", 
     bg='#b1a5cc',
     font=f,
     foreground='#250073'
@@ -218,11 +233,17 @@ Label(
 
 email_tf = Entry(
     left_frame, 
-    font=f
+    font=f,
+    bd=5,
+    foreground='#250073',
+    background='#ddd9de',
     )
 pwd_tf = Entry(
     left_frame, 
     font=f,
+    bd=5,
+    foreground='#250073',
+    background='#ddd9de',
     show='*'
     )
 login_btn = Button(
@@ -230,9 +251,11 @@ login_btn = Button(
     width=15, 
     text='Login', 
     font=f, 
+    foreground='#250073',
     relief=SOLID,
     cursor='hand2',
-    command=None
+    command=None,
+    bg='#b1a5cc'
     )
 
 email_tf.grid(row=0, column=1, pady=10, padx=20)
