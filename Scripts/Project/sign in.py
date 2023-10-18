@@ -1,4 +1,7 @@
+
+from tkinter import PhotoImage 
 from tkinter import *
+
 
 
 window = Tk()
@@ -6,21 +9,30 @@ window.title('Expense Tracker')
 window.config(bg='#0B5A81')
 window.resizable(False,False)
 window.geometry("1200x700+100+50")
+window.wm_attributes('-transparentcolor', '#45b5a4')
 
-
+canvas = Canvas(window)
+canvas.pack()
 
 f = ('Times', 14)
 var = StringVar()
 var.set('male')
 
+background_image = PhotoImage(file="Scripts\\Project\\1.png")
+
+
+# Create a Label Widget to display the text or Image
+label = Label(window, image = background_image)
+label.pack()
+
 
 right_frame = Frame(
-    window, 
+    canvas, 
     bd=2, 
-    bg='#CCCCCC',
+    bg='#45b5a4',
     relief=SOLID, 
     padx=10, 
-    pady=10
+    pady=10 
     )
 
 
@@ -157,9 +169,9 @@ others_rb.pack(expand=True, side=LEFT)
 
 
 left_frame = Frame(
-    window, 
+    canvas, 
     bd=2, 
-    bg='#CCCCCC',   
+    bg='#45b5a4',   
     relief=SOLID, 
     padx=10,
     pady=10
@@ -202,5 +214,6 @@ pwd_tf.grid(row=1, column=1, pady=10, padx=20)
 login_btn.grid(row=2, column=1, pady=10, padx=20)
 left_frame.place(x=100,y=50,anchor="nw")
 
+# canvas.config(alpha=0.5)
 
 window.mainloop()
