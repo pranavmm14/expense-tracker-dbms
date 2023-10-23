@@ -1,64 +1,56 @@
 from tkinter import PhotoImage 
 from tkinter import *
 
-# Create the main window
+#Creating a window to show show UI of Desktop app
 window = Tk()
-window.title('Expense Tracker')
-window.config(bg='#0B5A81')
+window.title('FinTrack')
+window.config(bg='#c5bfc7')
 window.resizable(False,False)
 window.geometry("1200x700+100+50")
-# background_image = PhotoImage(file="Scripts\\Project\\1.png")
-# label6 = Label(window, image = background_image)
-# label6.pack()
 
+# Create a Label Widget to display the text or Image
+background_image = PhotoImage(file="Scripts\\Project\\1.png")
+label = Label(window, image = background_image)
+label.place(relx=0.5,rely=0.5,anchor="center")
 
+#UI fonts
 f = ('Times', 14)
-var = StringVar()
-var.set('male')
 
+# Frame to show stats
+bottom_frame = Frame(window, width=1200, height=250, bg="green" ,relief="solid")
+bottom_frame.place(rely=1,relx=0.5,anchor="s")
 
-
-
-# Create a bottom frame below the top frames
-bottom_frame = Frame(window, width=900, height=100, bg="green")
-bottom_frame.grid(row=10, column=10, columnspan=2, padx=10, pady=10)
-
-# Add widgets to the frames
-right_frame = Frame(window, width=300, height=600, bg="red")
-right_frame.grid(row=3, column=10, padx=1, pady=1)
-window, 
-bd=2, 
-bg='#CCCCCC',
-relief=SOLID, 
-padx=10, 
-pady=10
+# Frame to  add expenses 
+expense_frame = Frame(window, width=600, height=450, bg="red", bd=2)
+expense_frame.place(relx=0,rely=0, anchor="nw")
     
 Label(
-    right_frame, 
+    expense_frame, 
     text="Enter Item", 
     bg='#CCCCCC',
-    font=f
-    ).grid(row=1, column=0, sticky=W, pady=10)
+    font=f,
+    width=600
+    ).grid(row=0, column=0, pady=10)
 
 Label(
-    right_frame, 
+    expense_frame, 
     text="Add Amount", 
     bg='#CCCCCC',
     font=f
-    ).grid(row=2, column=0, sticky=W, pady=10)
+    ).grid(row=1, column=0, pady=10)
 
 register_Itme = Entry(
-    right_frame, 
+    expense_frame, 
     font=f
     )
 
 register_Amount = Entry(
-    right_frame, 
+    expense_frame, 
     font=f
     )
 
 register_btn = Button(
-    right_frame, 
+    expense_frame, 
     width=15, 
     text='Add', 
     font=f, 
@@ -72,15 +64,9 @@ register_Amount.grid(row=2, column=1, pady=10, padx=20)
 register_btn.grid(row=7, column=1, pady=10, padx=20)
 
 
-left_frame= Frame(window, width=300, height=600, bg="blue")
-left_frame.grid(row=3, column=20, padx=1, pady=1)
-window, 
-bd=2, 
-bg='#CCCCCC',
-relief=SOLID, 
-padx=10, 
-pady=10
-    
+left_frame= Frame(window, width=600, height=450, bg="blue")
+left_frame.place(relx=1,rely=0, anchor="ne")
+
 Label(
     left_frame, 
     text="", 
@@ -88,11 +74,11 @@ Label(
     font=f
     ).grid(row=1, column=0, sticky=W, pady=10)
 
-register_blanck = Entry(
+register_blank = Entry(
     left_frame, 
     font=f
     )
-register_blanck.grid(row=1, column=1, pady=10, padx=20) 
+register_blank.grid(row=1, column=1, pady=10, padx=20) 
 
 
 

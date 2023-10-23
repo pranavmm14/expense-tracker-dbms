@@ -1,27 +1,29 @@
-
 from tkinter import PhotoImage 
 from tkinter import *
 
-
-
+#Creating a window to show show UI of Desktop app
 window = Tk()
-window.title('Expense Tracker')
+window.title('FinTrack')
 window.config(bg='#c5bfc7')
 window.resizable(False,False)
 window.geometry("1200x700+100+50")
 
+# Create a Label Widget to display the text or Image
+background_image = PhotoImage(file="Scripts\\Project\\1.png")
+label = Label(window, image = background_image)
+label.place(relx=0.5,rely=0.5,anchor="center")
 
-
-f = ('Times', 14)
+f = ('Oxygen 14')
 var = StringVar()
 var.set('male')
 
-background_image = PhotoImage(file="Scripts\\Project\\1.png")
 
-
-# Create a Label Widget to display the text or Image
-label = Label(window, image = background_image)
-label.pack()
+#frame for placing the app name
+name_frame = Frame(window, bd=0, bg='#250073', relief=SOLID, padx=2, pady=2 )
+app_name_font = ('Oxygen 30 bold')  
+app_name = Label(name_frame, text="FinTrack", font=app_name_font ,bg="#fcb603", fg="#250073")
+app_name.pack()
+name_frame.place(relx=0.5,y=30,anchor="n")
 
 
 right_frame = Frame(
@@ -39,7 +41,7 @@ Label(
     text="First Name", 
     bg='#fff',
     font=f,
-    foreground='#063808'
+    foreground='#250073'
     ).grid(row=0, column=0, sticky=W, pady=10)
 
 Label(
@@ -47,16 +49,16 @@ Label(
     text="Last Name", 
     bg='#fff',
     font=f,
-    foreground='#063808'
+    foreground='#250073'
     ).grid(row=1, column=0, sticky=W, pady=10)
 
 
 Label(
     right_frame, 
-    text="Enter Email", 
+    text="Enter username", 
     bg='#fff',
     font=f,
-    foreground='#063808'
+    foreground='#250073'
     ).grid(row=2, column=0, sticky=W, pady=10)
 
 Label(
@@ -64,7 +66,7 @@ Label(
     text="Contact Number", 
     bg='#fff',
     font=f,
-    foreground='#063808'
+    foreground='#250073'
     
     ).grid(row=3, column=0, sticky=W, pady=10)
 
@@ -73,7 +75,7 @@ Label(
     text="Select Gender", 
     bg='#fff',
     font=f,
-    foreground='#063808'
+    foreground='#250073'
     ).grid(row=4, column=0, sticky=W, pady=10)
 
 Label(
@@ -81,7 +83,7 @@ Label(
     text="Enter Password", 
     bg='#fff',
     font=f,
-    foreground='#063808'
+    foreground='#250073'
     ).grid(row=5, column=0, sticky=W, pady=10)
 
 Label(
@@ -89,55 +91,55 @@ Label(
     text="Re-Enter Password", 
     bg='#fff',
     font=f,
-    foreground='#063808'
+    foreground='#250073'
     ).grid(row=6, column=0, sticky=W, pady=10)
 
 gender_frame = LabelFrame(
     right_frame,
-    bg='#fff',
+    bg='#ffffff',
     bd=2, 
     padx=10, 
     pady=10,
-    foreground='#063808',
+    foreground='#250073',
     )
 
 
 register_firstname = Entry(
     right_frame, 
     font=f,
-    bd=5, 
-    foreground='#063808',
+    bd=2, 
+    foreground='#250073',
     )
 
 register_lastname = Entry(
     right_frame, 
     font=f,
-    bd=5, 
-    foreground='#063808',
+    bd=2, 
+    foreground='#250073',
     )
 
 register_email = Entry(
     right_frame, 
     font=f,
-    bd=5, 
-    foreground='#063808',
+    bd=2, 
+    foreground='#250073',
     )
 
 register_mobile = Entry(
     right_frame, 
     font=f,
-    bd=5, 
-    foreground='#063808',
+    bd=2, 
+    foreground='#250073',
     )
 
 
 male_rb = Radiobutton(
     gender_frame, 
     text='Male',
-    bg='#CCCCCC',
+    bg='#ffffff',
     variable=var,
     value='male',
-    foreground='#063808',
+    foreground='#250073',
     font=('Times', 10),
     
 )
@@ -145,37 +147,26 @@ male_rb = Radiobutton(
 female_rb = Radiobutton(
     gender_frame,
     text='Female',
-    bg='#CCCCCC',
+    bg='#ffffff',
     variable=var,
     value='female',
-    foreground='#063808',
+    foreground='#250073',
     font=('Times', 10),
-  
 )
 
-others_rb = Radiobutton(
-    gender_frame,
-    text='Others',
-    bg='#CCCCCC',
-    variable=var,
-    value='others',
-    foreground='#063808',
-    font=('Times', 10)
-   
-)
 
 register_pwd = Entry(
     right_frame, 
     font=f,
-    bd=5, 
-    foreground='#063808',
+    bd=2, 
+    foreground='#250073',
     show='*'
 )
 pwd_again = Entry(
     right_frame, 
     font=f,
-    bd=5, 
-    foreground='#063808',
+    bd=2, 
+    foreground='#250073',
     show='*'
 )
 
@@ -185,9 +176,10 @@ register_btn = Button(
     text='Register', 
     font=f, 
     background='#fff',
-    relief=SOLID,
+    relief="solid",
     cursor='hand2',
-    command=None
+    command=None,
+    foreground="#250073"
 )
 
 
@@ -199,11 +191,11 @@ gender_frame.grid(row=4, column=1, pady=10, padx=20)
 register_pwd.grid(row=5, column=1, pady=10, padx=20)
 pwd_again.grid(row=6 , column=1, pady=10, padx=20)
 register_btn.grid(row=7, column=1, pady=10, padx=20)
-right_frame.place(x=700,y=50,anchor="nw")
+# right_frame.place(relx=0.75,rely=0.5,anchor="center")
+right_frame.place(relx=0.75,y=150,anchor="n")
 
 male_rb.pack(expand=True, side=LEFT)
 female_rb.pack(expand=True, side=LEFT)
-others_rb.pack(expand=True, side=LEFT)
 
 
 left_frame = Frame(
@@ -234,14 +226,14 @@ Label(
 email_tf = Entry(
     left_frame, 
     font=f,
-    bd=5,
+    bd=2,
     foreground='#250073',
     background='#ddd9de',
     )
 pwd_tf = Entry(
     left_frame, 
     font=f,
-    bd=5,
+    bd=2,
     foreground='#250073',
     background='#ddd9de',
     show='*'
@@ -261,7 +253,7 @@ login_btn = Button(
 email_tf.grid(row=0, column=1, pady=10, padx=20)
 pwd_tf.grid(row=1, column=1, pady=10, padx=20)
 login_btn.grid(row=2, column=1, pady=10, padx=20)
-left_frame.place(x=100,y=50,anchor="nw")
+left_frame.place(relx=0.25,y=150,anchor="n")
 
 
 window.mainloop()
