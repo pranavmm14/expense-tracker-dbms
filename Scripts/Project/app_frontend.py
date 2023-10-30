@@ -4,14 +4,13 @@ from tkinter import PhotoImage
 class RegisterFrame(tk.Frame):
     def __init__(self, master):
         super().__init__(master, bd=2, relief="solid", bg='#ffffff')
-
-        self.register_firstname = tk.Entry(self, font=("Oxygen 14"))
-        self.register_lastname = tk.Entry(self, font=("Oxygen 14"))
-        self.register_email = tk.Entry(self, font=("Oxygen 14"))
-        self.register_mobile = tk.Entry(self, font=("Oxygen 14"))
-        self.register_pwd = tk.Entry(self, font=("Oxygen 14"), show="*")
-        self.pwd_again = tk.Entry(self, font=("Oxygen 14"), show="*")
-        self.register_btn = tk.Button(self, text="Register", font=("Oxygen 14"), width=15, command=None)
+        self.register_firstname = tk.Entry(self, font=("Oxygen 14"),foreground='#250073')
+        self.register_lastname = tk.Entry(self, font=("Oxygen 14"),foreground='#250073')
+        self.register_email = tk.Entry(self, font=("Oxygen 14"),foreground='#250073')
+        self.register_mobile = tk.Entry(self, font=("Oxygen 14"),foreground='#250073')
+        self.register_pwd = tk.Entry(self, font=("Oxygen 14"),foreground='#250073', show="*")
+        self.pwd_again = tk.Entry(self, font=("Oxygen 14"),foreground='#250073', show="*")
+        self.register_btn = tk.Button(self, text="Register", font=("Oxygen 14"), width=15, command=None,background='#fff',relief="solid",cursor='hand2')
 
         self.register_firstname.grid(row=0, column=1, pady=10, padx=20)
         self.register_lastname.grid(row=1, column=1, pady=10, padx=20)
@@ -34,9 +33,9 @@ class LoginFrame(tk.Frame):
     def __init__(self, master):
         super().__init__(master, bd=2, relief="solid", bg='#b1a5cc')
 
-        self.email_tf = tk.Entry(self, font=("Oxygen 14"), bg='#ffffff')
-        self.pwd_tf = tk.Entry(self, font=("Oxygen 14"), show="*", bg='#ffffff')
-        self.login_btn = tk.Button(self, text="Login", font=("Oxygen 14"), width=15, command=None)
+        self.email_tf = tk.Entry(self, font=("Oxygen 14"), bg='#ddd9de',bd=2,foreground='#250073')
+        self.pwd_tf = tk.Entry(self, font=("Oxygen 14"), show="*", bg='#ddd9de',bd=2,foreground='#250073')
+        self.login_btn = tk.Button(self, text="Login", font=("Oxygen 14"), width=15, command=None,bg='#b1a5cc', relief="solid" ,cursor='hand2')
 
         self.email_tf.grid(row=0, column=1, pady=10, padx=20)
         self.pwd_tf.grid(row=1, column=1, pady=10, padx=20)
@@ -51,7 +50,7 @@ class FinTrack(tk.Tk):
 
         self.title("FinTrack")
         self.config(bg="#c5bfc7")
-        self.resizable(False, False)
+        # self.resizable(False, False)
         self.geometry("1200x700+100+50")
 
         self.background_image = PhotoImage(file="Scripts\\Project\\1.png")
@@ -61,13 +60,13 @@ class FinTrack(tk.Tk):
         self.app_name_font = ('Oxygen 30 bold')
         self.app_name = tk.Label(self, text="FinTrack", font=self.app_name_font, bg="#fcb603", fg="#250073")
 
-        self.name_frame = tk.Frame(self, bd=0, bg='#250073', relief="solid", padx=2, pady=2)
+        self.name_frame = tk.Frame(self, bd=0, bg='#250073',relief='SOLID', padx=2, pady=2 )
         self.app_name.pack()
 
         self.register_frame = RegisterFrame(self)
         self.login_frame = LoginFrame(self)
 
-        self.name_frame.place(relx=0.5, y=50, anchor="n")
+        self.name_frame.place(relx=0.5,y=30,anchor="n")
         self.register_frame.place(x=700,y=150,anchor="nw")
         self.login_frame.place(x=100,y=150,anchor="nw")
 
