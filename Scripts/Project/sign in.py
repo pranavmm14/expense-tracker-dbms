@@ -5,7 +5,7 @@ from tkinter import *
 window = Tk()
 window.title('FinTrack')
 window.config(bg='#c5bfc7')
-window.resizable(False,False)
+# window.resizable(False,False)
 window.geometry("1200x700+100+50")
 
 # Create a Label Widget to display the text or Image
