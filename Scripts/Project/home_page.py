@@ -14,8 +14,6 @@ label = Label(window, image = background_image)
 label.place(relx=0.5,rely=0.5,anchor="center")
 
 f = ('Times', 14)
-var = StringVar()
-var.set('male')
 
 #frame for placing the app name
 name_frame = Frame(window, bd=0, bg='#250073', relief=SOLID, padx=2, pady=2 )
@@ -31,72 +29,35 @@ bottom_frame.grid(row=1, column=0, columnspan=3, padx=10, pady=40, sticky='s')
 label3 = Label(bottom_frame)
 label3.place(x=600, y=50, anchor="center")
 
-label4 = Label(label3, text="Remaining Amount")
-
-register_TotalAmount = Entry(
-    label4,
-    font=f
-)
+amt=FALSE
+label4 = Label(label3, text=f"Remaining Amount: {amt}")
+register_TotalAmount = Entry(label4,font=f)
 
 label4.grid(row=0, column=0, pady=10, padx=20)
 
 
 # Create a right frame 
-right_frame = Frame(window, width=300, height=600, bg="#b1a5cc")
-right_frame.grid(row=0, column=2, padx=10, pady=150, sticky='ne')
+r_frame = Frame(window, width=300, height=600, bg="#b1a5cc")
+r_frame.grid(row=0, column=2, padx=10, pady=150, sticky='ne')
 
-Label(
-    right_frame, 
-    text="", 
-    bg='#b1a5cc',
-    font=f
-).grid(row=0, column=0, sticky=W, pady=10)
+Label(r_frame, text="", bg='#b1a5cc',font=f).grid(row=0, column=0, sticky=W, pady=10)
 
-register_blank = Entry(
-    right_frame, 
-    font=f
-)
+register_blank = Entry(r_frame, font=f)
 register_blank.grid(row=0, column=1, pady=10, padx=20)
 
 # Create a left frame 
-left_frame = Frame(window, width=300, height=600, bg="#b1a5cc")
-left_frame.grid(row=0, column=0, padx=50, pady=150, sticky='nw')
+l_frame = Frame(window, width=300, height=600, bg="#b1a5cc")
+l_frame.grid(row=0, column=0, padx=50, pady=150, sticky='nw')
 
-Label(
-    left_frame, 
-    text="Enter Item", 
-    bg='#b1a5cc',
-    font=f,
-    background='#b1a5cc',
-).grid(row=0, column=0, sticky=W, pady=10)
+Label(l_frame, text="Enter Item", bg='#b1a5cc',font=f,background='#b1a5cc',).grid(row=0, column=0, sticky=W, pady=10)
 
-Label(
-    left_frame, 
-    text="Add Amount", 
-    bg='#b1a5cc',
-    font=f,
-    background='#b1a5cc',
-).grid(row=1, column=0, sticky=W, pady=10)
+Label(l_frame, text="Add Amount", bg='#b1a5cc', font=f,background='#b1a5cc',).grid(row=1, column=0, sticky=W, pady=10)
 
-register_Item = Entry(
-    left_frame, 
-    font=f
-)
+register_Item = Entry(l_frame, font=f)
 
-register_Amount = Entry(
-    left_frame, 
-    font=f
-)
+register_Amount = Entry(l_frame, font=f)
 
-register_btn = Button(
-    left_frame, 
-    width=15, 
-    text='Add', 
-    font=f, 
-    relief=SOLID,
-    cursor='hand2',
-    command=None,
-)
+register_btn = Button(l_frame, width=15, text='Add', font=f, relief=SOLID, cursor='hand2', command=None)
 
 register_Item.grid(row=0, column=1, pady=10, padx=20) 
 register_Amount.grid(row=1, column=1, pady=10, padx=20)
