@@ -6,8 +6,8 @@ from tkinter import messagebox
 
 # Connect to database
 
-# with open('Scripts\\Project\\myconfig.json','r') as c:
-#     params= json.load(c)['params']
+with open('Scripts\\Project\\myconfig.json','r') as c:
+    params= json.load(c)['params']
 
 #     mydb = mysql.connector.connect(
 #     host=params['host'],
@@ -16,7 +16,7 @@ from tkinter import messagebox
 #     database= params['database'],
 #     port = 3306
 # )
-mydb = mysql.connector.connect(host='localhost', user='root', password='spmm', database='miniproject')
+mydb = mysql.connector.connect(host=params['host'], user=params['username'], password=params['password'], database=params['database'])
 
 def check_username_exists(db, username):
     cursor = db.cursor()
@@ -41,9 +41,6 @@ import tkinter as tk
 import mysql.connector
 
 def registerUser(db):
-    mob= register_mobile.get()
-    messagebox.showinfo(len(mob))
-
     reg_cursor = db.cursor()
 
     # Check if the username is not blank
@@ -64,8 +61,8 @@ def registerUser(db):
 
     try:
         # Check if the username  or Password is not blank
-        usr_name=user_name.get() 
-        password=pwd_enter.get() 
+        usr_name=register_usrname.get() 
+        password=register_pwd.get() 
         if (usr_name.strip() == "" and password.strip() == ""):
             # Show an appropriate pop-up message
             messagebox.showerror("Error", "Username or Password cannot be blank")
@@ -78,7 +75,8 @@ def registerUser(db):
             return
 
         # Insert the user data into the database
-        reg_cursor.execute(f"INSERT INTO USERSINFO(USER_NAME, FIRST_NAME, LAST_NAME, MOBILE_NUMBER, DOB, GENDER, INITIAL_BAL, PASSWORDS) VALUES ('{usr_name}', '{fname}', '{lname}', {mob}, '{dob}',{gen}, {ini_bal},'{password}')")
+        reg_cursor.execute(f"INSERT INTO USERSINFO(USER_NAME, FIRST_NAME, LAST_NAME, MOBILE_NUMBER, DOB, GENDER, INITIAL_BAL, PASSWORDS) VALUES ('\
+            {usr_name}', '{fname}', '{lname}', {mob}, '{dob}',{gen}, {ini_bal},'{password}')")
 
         # Commit the changes
         db.commit()
@@ -248,7 +246,7 @@ label.place(relx=0.5,rely=0.5,anchor="center")
 
 f = ('Oxygen 14')
 var = StringVar()
-# var.set(1)
+var.set(1)
 
 #frame for placing the app name
 name_frame = Frame(window,bd=0,bg='#250073',relief=SOLID,padx=2,pady=2 )
