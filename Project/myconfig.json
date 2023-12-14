@@ -1,0 +1,8 @@
+{
+    "params": {
+        "username": "root",
+        "password": "spmm",
+        "database":"miniproject",
+        "host": "localhost"
+    }
+}

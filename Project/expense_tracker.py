@@ -6,7 +6,7 @@ from tkinter import messagebox
 
 # Connect to database
 
-with open('Scripts\\Project\\myconfig.json','r') as c:
+with open('Project\\myconfig.json','r') as c:
     params= json.load(c)['params']
 
 #     mydb = mysql.connector.connect(
@@ -240,7 +240,7 @@ window.resizable(False,False)
 window.geometry("1200x700+100+50")
 
 # Create a Label Widget to display the text or Image
-background_image = PhotoImage(file="Scripts\\Project\\1.png")
+background_image = PhotoImage(file="Project\\1.png")
 label = Label(window,image = background_image)
 label.place(relx=0.5,rely=0.5,anchor="center")
 
